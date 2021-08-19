@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
        justifyContent: 'center',
        textAlign: 'center',
        alignItems: 'center',
-       height: '30vh',
+       height: '90vh',
 
     },
     appbar: {
@@ -23,15 +23,22 @@ const useStyles = makeStyles((theme) => ({
     },
     appbarTitle: {
         flexGrow: '1',
+        textAlign: 'center'
     },
     icon: {
         color: '#fff',
         fontSize: '2rem',
     },
+    colorText: {
+      color: '#DE8336'  
+    },
+    container: {
+        textAlign: 'center',
+    },
     title: {
         color: '#fff',
         fontFamily: 'Quicksand',
-        fontSize: '3rem',
+        fontSize: '4rem',
     },
 }));
     
@@ -43,17 +50,17 @@ export default function Header() {
        <AppBar className={classes.appbar} elevation={0}>
            <Toolbar className={classes.appbarWrapper}>
             <h1 className={classes.appbarTitle}>
-                Will <span className={classes.colorText}>Struder.</span>
+                 Welcome!
             </h1>
                 <IconButton>
                     <SortIcon className={classes.icon}/>
                  </IconButton>
            </Toolbar>
         </AppBar>
-        <div>
+        <div className={classes.container}>
             <h1 className={classes.title}>
-                Hello, my name is <br /> Will
-                <span className={classes.colorText}>Struder.</span>
+                My name is <br /> Will 
+                <span className={classes.colorText}> Struder</span>.
             </h1>
         </div> 
     </div>
