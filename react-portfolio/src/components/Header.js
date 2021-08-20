@@ -5,6 +5,7 @@ import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
        display: 'flex',
@@ -46,6 +47,15 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         fontSize: '3rem',
     },
+    pic: {
+        position: 'absolute',
+        resizeMode: 'contain',
+        height: 420,
+        margin: '30px',
+        borderRadius: 100 / 2,
+        overflow: "hidden",
+        left: 180,
+    },
 }));
     
 
@@ -62,11 +72,17 @@ export default function Header() {
             <h1 className={classes.appbarTitle}>
                  Welcome!
             </h1>
+                  
                 <IconButton>
                     <SortIcon className={classes.icon}/>
                  </IconButton>
+            
            </Toolbar>
+            <div>
+            <img className={classes.pic} src='/assets/headshot.jpeg' alt="Logo" />
+            </div>
         </AppBar>
+        
 
         <Collapse in={checked}
         { ... (checked ? { timeout: 1000 } : {})}
