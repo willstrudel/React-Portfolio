@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Collapse, IconButton, Toolbar } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,7 +56,7 @@ export default function Header() {
         setChecked(true);
     },[])
     return (
-    <div className={classes.root}>
+    <div className={classes.root} id="header">
        <AppBar className={classes.appbar} elevation={0}>
            <Toolbar className={classes.appbarWrapper}>
             <h1 className={classes.appbarTitle}>
@@ -69,16 +70,17 @@ export default function Header() {
 
         <Collapse in={checked}
         { ... (checked ? { timeout: 1000 } : {})}
-        collapsedHeight={50} 
         >
         <div className={classes.container}>
             <h1 className={classes.title}>
                 My name is <br /> Will 
                 <span className={classes.colorText}> Struder</span>.
             </h1>
+            <Scroll to="projectCards" smooth={true}>
             <IconButton>
                 <ExpandMoreIcon className={classes.expand}/>
             </IconButton>
+            </Scroll>
         </div> 
         </Collapse>
     </div>

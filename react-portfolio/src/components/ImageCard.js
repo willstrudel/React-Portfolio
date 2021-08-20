@@ -7,41 +7,76 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 645,
+    background: 'rgba(0,0,0,0.5)',
+    margin: '30px',
+    width: '40vh'
+
   },
   media: {
-    height: 140,
+    height: 440,
+  },
+  title: {
+    fontFamily: 'Quicksand',
+    fontWeight: 'bold',
+    fontSize: '2rem',
+    color: '#fff',
+    textDecorationLine: 'underline',
+    textDecorationColor: '#DE8336',
+  },
+  desc: {
+    fontFamily: 'Quicksand',
+    fontWeight: 'bold',
+    fontSize: '1.1rem',
+    color: '#fff',
+  },
+  learnMoreButton: {
+    color: '#DE8336'
   },
 });
 
-export default function ImageCard() {
+export default function ImageCard({ place, checked }){
   const classes = useStyles();
 
   return (
+  <Collapse in={checked} { ... (checked ? { timeout: 1000 } : {})} >
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image=""
-          title="Empty Pantry Logo"
+          image={place.imageUrl}
+          title="Empty Pantry Background"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Empty Pantry
+          <Typography 
+          gutterBottom variant="h5" 
+          component="h2" 
+          className={classes.title}>
+            {place.title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Empty Pantry is an exciting concept my team and I developed, bringing families and friends together over new recipe ideas based on nutritional and dietary needs.
+
+          <Typography 
+          variant="body2" 
+          color="textSecondary" 
+          component="p"
+          className={classes.desc}>
+            {place.description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button 
+        size="small" 
+        color="primary"
+        className={classes.learnMoreButton}>
           Learn More
         </Button>
       </CardActions>
     </Card>
+  </Collapse>
   );
 }
