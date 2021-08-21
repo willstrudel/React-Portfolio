@@ -1,5 +1,8 @@
 {
   "name": "react-tutorial",
+
+  "homepage": "https://willstrudel.github.io/React-Portfolio/"
+
   "version": "0.1.0",
   "private": true,
   "dependencies": {
