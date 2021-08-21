@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
 
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
        display: 'flex',
@@ -25,8 +26,11 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto',
     },
     appbarTitle: {
-        flexGrow: '1',
-        textAlign: 'center'
+        flexGrow: '5',
+        textAlign: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     icon: {
         color: '#fff',
@@ -48,13 +52,12 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '3rem',
     },
     pic: {
-        position: 'absolute',
+        position: 'relative',
         resizeMode: 'contain',
         height: 420,
         margin: '30px',
         borderRadius: 100 / 2,
         overflow: "hidden",
-        left: 180,
     },
 }));
     
@@ -65,28 +68,24 @@ export default function Header() {
     useEffect(()=>{
         setChecked(true);
     },[])
+
     return (
     <div className={classes.root} id="header">
        <AppBar className={classes.appbar} elevation={0}>
            <Toolbar className={classes.appbarWrapper}>
-            <h1 className={classes.appbarTitle}>
-                 Welcome!
-            </h1>
-                  
-                <IconButton>
-                    <SortIcon className={classes.icon}/>
-                 </IconButton>
-            
+            <h1 className={classes.appbarTitle}> </h1>
+             <IconButton>
+                <SortIcon className={classes.icon}/>
+             </IconButton>
            </Toolbar>
-            <div>
-            <img className={classes.pic} src='/assets/headshot.jpeg' alt="Logo" />
-            </div>
         </AppBar>
         
 
         <Collapse in={checked}
-        { ... (checked ? { timeout: 1000 } : {})}
-        >
+        { ... (checked ? { timeout: 1000 } : {})}>
+             <div>
+            <img className={classes.pic} src='/assets/headshot.jpeg' alt="Logo" />
+            </div>
         <div className={classes.container}>
             <h1 className={classes.title}>
                 My name is <br /> Will 
