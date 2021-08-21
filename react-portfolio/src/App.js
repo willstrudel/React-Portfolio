@@ -7,8 +7,8 @@ import Projects from './components/projects';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: '100vh',
-    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/seagull.jpeg'})`,
+    minHeight: '80vh',
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/cabin.jpg'})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   },

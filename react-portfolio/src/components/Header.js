@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     icon: {
-        color: '#fff',
+        color: '#3d3d3d',
         fontSize: '2rem',
     },
     colorText: {
@@ -43,21 +43,22 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     title: {
-        color: '#fff',
+        color: '#3d3d3d',
         fontFamily: 'Quicksand',
         fontSize: '4rem',
     },
     expand: {
-        color: '#fff',
+        color: '#3d3d3d',
         fontSize: '3rem',
     },
     pic: {
         position: 'relative',
         resizeMode: 'contain',
-        height: 420,
+        height: 320,
         margin: '30px',
         borderRadius: 100 / 2,
         overflow: "hidden",
+        top: 80,
     },
 }));
     

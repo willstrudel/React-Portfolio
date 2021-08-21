@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     maxWidth: 645,
     background: 'rgba(0,0,0,0.5)',
     margin: '30px',
-    width: '40vh'
+    width: '60vh'
 
   },
   media: {

@@ -8,8 +8,8 @@ export default function useWindowPosition(id) {
       const offetSetHeight = window.document.getElementById(id).offsetHeight;
       if (window.pageYOffset > offetSetHeight * 0.7) {
         setAnimation(true);
-      }
-    }
+      };
+    };
     window.addEventListener('scroll', updatePosition);
     updatePosition();
     return () => window.removeEventListener('scroll', updatePosition);
