@@ -4,8 +4,7 @@ import { AppBar, Collapse, IconButton, Toolbar } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
-
-
+import logo from '../image/headshot.jpeg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -85,7 +84,7 @@ export default function Header() {
         <Collapse in={checked}
         { ... (checked ? { timeout: 1000 } : {})}>
              <div>
-            <img className={classes.pic} src='/assets/headshot.jpeg' alt="Logo" />
+            <img className={classes.pic} src={logo} alt="Logo" />
             </div>
         <div className={classes.container}>
             <h1 className={classes.title}>
