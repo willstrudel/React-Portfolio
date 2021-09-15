@@ -2,8 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
 
@@ -39,8 +41,13 @@ const useStyles = makeStyles({
   },
 });
 
+
+
+
 export default function ImageCard({ place, checked }){
   const classes = useStyles();
+
+  
 
   return (
   <Collapse in={checked} { ... (checked ? { timeout: 1000 } : {})} >
@@ -68,6 +75,16 @@ export default function ImageCard({ place, checked }){
           </Typography>
         </CardContent>
       </CardActionArea>
+      <CardActions>
+        <Button 
+        href="www.apple.com"
+        target="_blank"
+        size="small" 
+        color="primary"
+        className={classes.learnMoreButton}>
+          Learn More
+        </Button>
+      </CardActions>
     </Card>
   </Collapse>
   );
