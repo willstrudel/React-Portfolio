@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '30px',
         borderRadius: 100 / 2,
         overflow: "hidden",
-        top: 80,
+        top: 40,
     },
 }));
     
